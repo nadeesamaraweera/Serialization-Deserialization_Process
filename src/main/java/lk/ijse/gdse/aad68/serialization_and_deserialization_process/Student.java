@@ -2,40 +2,27 @@ package lk.ijse.gdse.aad68.serialization_and_deserialization_process;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Student {
+import java.io.Serializable;
 
+public class Student implements Serializable {
+
+
+        private static final long serialVersionUID = 1L;
         private String name;
-        private String age;
         private String address;
+        private int age;
 
-        public Student(@JsonProperty("name") String name,
-                        @JsonProperty("age") String age,
-                        @JsonProperty("address") String address){
+        public Student(String name, int age,String address) {
             this.name = name;
+            this.address=address;
             this.age = age;
-            this.address = address;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getAge() {
-            return age;
-        }
-
-        public String getAddress() {
-            return address;
         }
 
         @Override
         public String toString() {
-            return "Student{" +
-                    "name='" + name + '\'' +
-                    ", age='" + age + '\'' +
-                    ", address='" + address + '\'' +
-                    '}';
+            return "Person{name='" + name + "',address='" + address + "',age='" + age + '}';
         }
     }
+
 
 
